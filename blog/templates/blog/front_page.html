@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div id="content"> 
+        {% for i in Post %}
+            <span id="post_title">{{ i.title  }}<br></span>
+            <span id ="post_body">{{ i.body }}<br></span>
+        {% endfor %}
+    </div>
+    <div id="sidebar">
+        <h3> &nbsp;>>> smells_like_snakes()</h3>
+            {% for i in Post %}
+                <div id="post_links">{{ i.title }}</div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

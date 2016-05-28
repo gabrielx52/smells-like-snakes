@@ -1,0 +1,17 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>smells_like_snakes()</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/global.css' %}" />
+    <link href="//db.onlinewebfonts.com/c/9f94dc20bb2a09c15241d3a880b7ad01?family=Menlo" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+        <div id="header">
+            blog
+        </div>
+            {% block content %}
+            {% endblock %}
+    </body>
+</html>
