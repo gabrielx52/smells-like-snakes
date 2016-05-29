@@ -4,15 +4,18 @@ from .models import Post
 
 
 def front_page(request):
-    recent_posts = Post.objects.all()[:5]
+    """ Main page """
+    published = Post.objects.exclude(date_published__exact=None)
+    recent_posts = published.order_by('-date_published')[:5]
     post_title = Post.objects.all()
     context = {'post': post_title, 'recent_posts': recent_posts}
     return render(request, 'blog/front_page.html', context)
 
 
 def detail_view(request, post_id):
+    """ Detailed post view """
     published = Post.objects.exclude(date_published__exact=None)
-    recent_posts = Post.objects.all()[:5]
+    recent_posts = Post.objects.all()
     try:
         post = published.get(pk=post_id)
     except post.DoesNotExist:
@@ -23,5 +26,6 @@ def detail_view(request, post_id):
 
 def about_view(request):
     """ About page """
-    recent_posts = Post.objects.all()[:5]
+    published = Post.objects.exclude(date_published__exact=None)
+    recent_posts = published.order_by('-date_published')[:5]
     return render(request, 'blog/about.html', {'recent_posts': recent_posts})
