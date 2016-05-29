@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div id="content"> 
-        {% for i in Post %}
-            <span id="post_title">{{ i.title  }}<br></span>
-            <span id ="post_body">{{ i.body }}<br></span>
-        {% endfor %}
+
+    {% for i in post %}
+    <div id="content">
+        <div id="post_title">
+        <a href="{% url 'detail_view' i.pk %}">
+        {{ i.title  }}</a><br>
+         <span id="ten_point">[{{ i.date_published }}]</span><br>
+        </div>
+        <span id ="post_body">{{ i.body }}<br></span>
+        <span id="read_more"><a href="{% url 'detail_view' i.pk %}">...</a></span>
     </div>
-    <div id="sidebar">
-        <h3> &nbsp;>>> smells_like_snakes()</h3>
-            {% for i in Post %}
-                <div id="post_links">{{ i.title }}</div>
-            {% endfor %}
-    </div>
-</div>
+    {% endfor %}
+
 {% endblock %}
 

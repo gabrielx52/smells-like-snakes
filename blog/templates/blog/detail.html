@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-{{ post_id.body }}
+<div id="detail_title">
+<span id="comment"> #  {{ post.title }}</span><br>
+<span id="fourteen_point">
+[{{ post.date_published }}]<br>
+</span>
+</div>
+<!-- <hr> -->
+<div id="detail_body">
+{{ post.body }}<br>
+</div>
+<br>
+<span id="return_link">
+<a href="{% url 'front page' %}"> return </a>
+</span>
 {% endblock %}

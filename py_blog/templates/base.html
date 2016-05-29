@@ -9,9 +9,29 @@
 </head>
     <body>
         <div id="header">
-            blog
+        # a python blog
         </div>
+        <div class="container">
+<!--         <div id="content">  -->
             {% block content %}
             {% endblock %}
+<!--         </div> -->
+        <div id="sidebar">
+            <a href="{% url 'front page' %}"><h3> &nbsp;>>> smells_like_snakes()</h3></a>
+            <h4>recent.posts</h4>
+            <div id="post_links">
+                {% for i in recent_posts %}
+                    <a href="{% url 'detail_view' i.pk %}">{{ i.title }}</a><br>
+                {% endfor %}
+            </div>
+            <br>
+<!--         <br><br><br><br> -->
+            <h4>about.me</h4>
+            <div id="post_links">
+                <a href="{% url 'about_view' %}">me</a><br>
+                <a href="https://github.com/gabrielx52"> github</a>
+            </div>
+        </div>
+        </div>
     </body>
 </html>
