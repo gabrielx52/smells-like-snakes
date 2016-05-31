@@ -8,7 +8,7 @@
         {{ i.title  }}</a><br>
          <span id="ten_point">[{{ i.date_published }}]</span><br>
         </div>
-        <span id ="post_body">{{ i.body }}<br></span>
+        <span id ="post_body">{{ i.body|safe }}<br></span>
         <span id="read_more"><a href="{% url 'detail_view' i.pk %}">...</a></span>
     </div>
     {% endfor %}

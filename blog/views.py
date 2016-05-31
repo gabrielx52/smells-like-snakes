@@ -15,7 +15,7 @@ def front_page(request):
 def detail_view(request, post_id):
     """ Detailed post view """
     published = Post.objects.exclude(date_published__exact=None)
-    recent_posts = Post.objects.all()
+    recent_posts = published.order_by('-date_published')[:5]
     try:
         post = published.get(pk=post_id)
     except post.DoesNotExist:
