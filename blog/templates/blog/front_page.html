@@ -4,14 +4,27 @@
     {% for i in recent_posts %}
     <div id="content">
         <div id="post_title">
-        <a href="{% url 'detail_view' i.pk %}">
-        {{ i.title  }}</a><br>
-         <span id="ten_point">[{{ i.date_published }}]</span><br>
+            <a href="{% url 'detail_view' i.pk %}">
+                <span id="bold">{{ i.title  }}</span>
+            </a>
+            <br>
+            <span id="ten_point">[{{ i.date_published }}] &nbsp;
+       <!--      <br> -->
+            {'tag(s)':[
+            {% for category in i.category.all %}
+                <a href="{% url 'cat_view' category %}">
+                {{ category }}
+                </a> , &nbsp;
+            {% endfor %}
+            ]}
+            </span>
         </div>
-        <span id ="post_body">{{ i.body|safe }}<br></span>
-        <span id="read_more"><a href="{% url 'detail_view' i.pk %}">...</a></span>
+<!--             <span id ="post_body">{{ i.body|safe }}<br></span>
+            <span id="read_more"><a href="{% url 'detail_view' i.pk %}">...</a></span><br> -->
+
     </div>
     {% endfor %}
 
 {% endblock %}
 
+<!-- {% url 'cat_view' category.name %} -->

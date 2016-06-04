@@ -17,6 +17,20 @@ div#sidebar {
     font-family: Menlo, Monaco, 'Source Code Pro', monospace;
 }
 
+div#main_section {
+margin-left: 0%;
+margin-right: 22%;
+font-style: bolder;
+
+}
+
+div#not_found {
+    font-size: 28pt;
+/*    margin-left: 34%;
+    margin-top: 4%;*/
+    text-align: center;
+}
+
 div#post_links {
     font-size: 11;
     margin-left: 35%;
@@ -25,11 +39,9 @@ div#post_links {
 
 div#content {
     font-family: Georgia, serif;
-    height:35%;
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 37%;
-    background-color: lightgrey;
 }
 
 #content a:visited {
@@ -37,7 +49,8 @@ div#content {
 }
 
 #content a:hover {
-    color: #5A4C4C;
+    color: red;
+   /* color: #5A4C4C;*/
 }
 
 #post_title {
@@ -48,12 +61,12 @@ div#content {
     color: black;
 }
 
-#post_title a {
+span#bold {
     font-weight: bold;
 }
 
 #post_title a:hover {
-    color: white;
+    color: red;
 }
 
 #post_title:visited {
@@ -103,10 +116,10 @@ div#detail_title {
     color: black;
 }
 
-span#comment {
+/*span#comment {
     font-style: italic;
     color: dimgrey;
-}
+}*/
 
 div#detail_body {
     margin-top: 2%;
@@ -170,6 +183,29 @@ span#fourteen_point {
 
 #ten_point {
     font-size: 10pt;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    white-space: nowrap;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.428571429;
+    color: #333333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
 }
 
 /*img {

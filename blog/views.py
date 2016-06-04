@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import Post
+from .models import Post, Category
 
 
 def front_page(request):
@@ -22,6 +22,18 @@ def detail_view(request, post_id):
         raise Http404
     context = {'post': post, 'recent_posts': recent_posts}
     return render(request, 'blog/detail.html', context)
+
+
+def cat_view(request, cat):
+    """ View posts by category """
+    published = Post.objects.exclude(date_published__exact=None)
+    recent_posts = published.order_by('-date_published')[:5]
+    if Category.objects.filter(name=cat):
+        pots = Post.objects.filter(category__name=cat)
+        context = {'cat': cat, 'pots': pots, 'recent_posts': recent_posts}
+    else:
+        context = {'not_found': 'Not Found', 'recent_posts': recent_posts}
+    return render(request, 'blog/cat.html', context)
 
 
 def about_view(request):
