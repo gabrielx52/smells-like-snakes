@@ -21,7 +21,7 @@ from blog import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.front_page, name='front page'),
-    url(r'^post/(?P<post_id>[0-9]+)/$', views.detail_view, name='detail_view'),
+    url(r'^post/(?P<post_id>[\w]+)/$', views.detail_view, name='detail_view'),
     url(r'^bio/', views.about_view, name='about_view'),
     url(r'^cat/(?P<cat>[\w]+)/$', views.cat_view, name='cat_view')
 ]

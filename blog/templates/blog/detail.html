@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div id="detail">
 <div id="detail_title">
 <!--     <span id="comment"> -->
     {{ post.title }}
@@ -11,10 +12,14 @@
 </div>
 <!-- <hr> -->
 <div id="detail_body">
-    {{ post.body|safe }}<br>
+    {{ post.body|safe }}
+    <br>
 </div>
-<br>
-<span id="return_link">
-    <a href="{% url 'front page' %}"> return </a>
+    <br>
+<span id="root_link">
+    <a href="{% url 'front page' %}">~/</a>
 </span>
+<br>
+<!-- <span id="return_link"> -->
+</div>
 {% endblock %}

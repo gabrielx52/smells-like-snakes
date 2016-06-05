@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
-    {% for i in recent_posts %}
     <div id="content">
+    {% for i in recent_posts %}
+    
+    <div id="post">
         <div id="post_title">
             <a href="{% url 'detail_view' i.pk %}">
                 <span id="bold">{{ i.title  }}</span>
@@ -19,12 +20,10 @@
             ]}
             </span>
         </div>
-<!--             <span id ="post_body">{{ i.body|safe }}<br></span>
-            <span id="read_more"><a href="{% url 'detail_view' i.pk %}">...</a></span><br> -->
-
     </div>
+    
     {% endfor %}
-
+    </div>
 {% endblock %}
 
 <!-- {% url 'cat_view' category.name %} -->

@@ -18,8 +18,8 @@ def detail_view(request, post_id):
     recent_posts = published.order_by('-date_published')[:5]
     try:
         post = published.get(pk=post_id)
-    except post.DoesNotExist:
-        raise Http404
+    except:
+        return render(request, 'blog/nope.html', {'view': 'post', 'err': post_id, 'recent_posts': recent_posts})
     context = {'post': post, 'recent_posts': recent_posts}
     return render(request, 'blog/detail.html', context)
 
@@ -32,7 +32,7 @@ def cat_view(request, cat):
         pots = Post.objects.filter(category__name=cat)
         context = {'cat': cat, 'pots': pots, 'recent_posts': recent_posts}
     else:
-        context = {'not_found': 'Not Found', 'recent_posts': recent_posts}
+        return render(request, 'blog/nope.html', {'view': 'cat', ' err': cat, 'recent_posts': recent_posts})
     return render(request, 'blog/cat.html', context)
 
 

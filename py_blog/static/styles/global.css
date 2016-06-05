@@ -1,7 +1,16 @@
+
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+/*    background-color:#FEFFF1;*/
+    /*font-family: Menlo, Monaco, 'Source Code Pro', monospace;*/
+}
+
 .contaner {
-    background-color: #FCFCFC;
+    /*background-color: #FCFCFC;*/
+  /*  background-color: #FEF9ED;*/
     position: relative;
     padding:0 0 0 55px;
+    margin-right: 22%;
 }
 
 div#sidebar {
@@ -26,8 +35,11 @@ font-style: bolder;
 
 div#not_found {
     font-size: 28pt;
-/*    margin-left: 34%;
-    margin-top: 4%;*/
+    text-align: center;
+}
+
+div#error {
+    font-size: 24;
     text-align: center;
 }
 
@@ -37,20 +49,26 @@ div#post_links {
     margin-top: 0;
 }
 
-div#content {
-    font-family: Georgia, serif;
-    margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 37%;
-}
-
 #content a:visited {
     color: black;
 }
 
 #content a:hover {
     color: red;
-   /* color: #5A4C4C;*/
+}
+
+div#post {
+    margin-left: 10%;
+    text-align: left;
+    width: 600px;
+}
+
+#post a:visited {
+    color: black;
+}
+
+#post a:hover {
+    color: red;
 }
 
 #post_title {
@@ -109,23 +127,34 @@ div#header {
     color: dimgrey;
 }
 
-div#detail_title {
-    margin-top: 5%;
+div#grey_back {
+    background-color: grey;
+    margin:0 0 0 0;
+}
+
+div#detail {
     margin-left: 5%;
+    margin-top: 5%;
+}
+
+div#detail_title {
     font-size: 22pt;
     color: black;
 }
 
-/*span#comment {
-    font-style: italic;
-    color: dimgrey;
-}*/
-
 div#detail_body {
     margin-top: 2%;
-    margin-left: 5%;
     font-size: 14pt;
     margin-right: 27%;
+    background-color: #F8F8F8;
+    border-radius: 4px;
+    /*border: 1px #E8E8E8 solid;*/
+    padding: 10px;
+}
+
+span#comment {
+    font-style: italic;
+    color: dimgrey;
 }
 
 div.gist-file {
@@ -134,7 +163,7 @@ div.gist-file {
 
 a:link {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 hr {
@@ -181,6 +210,19 @@ span#fourteen_point {
     color: black;
 }
 
+span#root_link {
+    font-size: 14pt;
+    color: black;
+}
+
+span#root_link a:visited {
+    color: black;
+}
+
+span#root_link a:hover {
+    color: red;
+}
+
 #ten_point {
     font-size: 10pt;
 }
@@ -207,13 +249,3 @@ pre {
     border: 1px solid #cccccc;
     border-radius: 4px;
 }
-
-/*img {
-    float: left;
-    margin-left: 5%;
-    margin-right: 3%;
-    border: 3px double;
-    color: grey;
-    vertical-align: baseline;
-}
-*/
