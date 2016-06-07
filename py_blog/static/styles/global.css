@@ -38,6 +38,16 @@ div#not_found {
     text-align: center;
 }
 
+span#tag {
+    font-weight: bold;
+    color: #00688B;
+}
+
+span#four_oh_four {
+    color: red;
+    font-size: 36;
+}  
+
 div#error {
     font-size: 24;
     text-align: center;
@@ -72,7 +82,7 @@ div#post {
 }
 
 #post_title {
-    font-size: 16pt;
+    font-size: 18pt;
     margin-left: 2%;
     margin-bottom: 2%;
     margin-top: 5%;
@@ -137,13 +147,13 @@ div#detail {
     margin-top: 5%;
 }
 
-div#detail_title {
+span#detail_title {
     font-size: 22pt;
     color: black;
 }
 
 div#detail_body {
-    margin-top: 2%;
+    margin-top: 1%;
     font-size: 14pt;
     margin-right: 27%;
     background-color: #F8F8F8;

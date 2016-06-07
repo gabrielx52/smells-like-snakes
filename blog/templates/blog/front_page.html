@@ -10,20 +10,19 @@
             </a>
             <br>
             <span id="ten_point">[{{ i.date_published }}] &nbsp;
-       <!--      <br> -->
-            {'tag(s)':[
+            Tagged in: 
             {% for category in i.category.all %}
                 <a href="{% url 'cat_view' category %}">
-                {{ category }}
-                </a> , &nbsp;
+                <span id="tag">
+                    {{ category }}
+                </span>
+                </a> 
+                <!-- &nbsp; -->
             {% endfor %}
-            ]}
             </span>
         </div>
     </div>
-    
+    <!-- &Pi; -->
     {% endfor %}
     </div>
 {% endblock %}
-
-<!-- {% url 'cat_view' category.name %} -->

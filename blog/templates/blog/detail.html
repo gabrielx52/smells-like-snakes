@@ -1,25 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="detail">
-<div id="detail_title">
-<!--     <span id="comment"> -->
+<span id="detail_title">
     {{ post.title }}
-<!--     </span> -->
     <br>
     <span id="fourteen_point">
         [{{ post.date_published }}]<br>
     </span>
-</div>
-<!-- <hr> -->
+</span>
 <div id="detail_body">
     {{ post.body|safe }}
     <br>
 </div>
-    <br>
+Tagged in: {% for category in post.category.all %}
+                <a href="{% url 'cat_view' category %}">
+                <span id="tag">
+                    {{ category }}
+                </span>
+                </a> 
+                <!-- &nbsp; -->
+            {% endfor %}
+            <br><br>
 <span id="root_link">
     <a href="{% url 'front page' %}">~/</a>
 </span>
 <br>
-<!-- <span id="return_link"> -->
 </div>
 {% endblock %}

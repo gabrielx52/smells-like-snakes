@@ -13,10 +13,8 @@
         <br>
         </div>
         <div class="container">
-<!--         <div id="content">  -->
             {% block content %}
             {% endblock %}
-<!--         </div> -->
         <div id="sidebar">
             <a href="{% url 'front page' %}"><h3> &nbsp;>>> smells_like_snakes()</h3></a>
             <h4>recent.posts</h4>
@@ -26,7 +24,6 @@
                 {% endfor %}
             </div>
             <br>
-<!--         <br><br><br><br> -->
             <h4>about</h4>
             <div id="post_links">
                 <a href="{% url 'about_view' %}">me</a><br>
